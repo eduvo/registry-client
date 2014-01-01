@@ -20,6 +20,7 @@ module Registry
       def ping
         config = Registry::Client::Config.load(options[:configfile])
         conn = Registry::Client::Connection.new(config['server'])
+        puts conn.ping
       end
 
     end

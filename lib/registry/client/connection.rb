@@ -6,15 +6,18 @@ module Registry
     class Connection
 
       def initialize(params)
-        conn = Faraday.new "https://#{params['host']}:#{params['port']}",
+        @conn = Faraday.new "https://#{params['host']}:#{params['port']}",
           :ssl => {
             :verify => false
           }
+      end
+
+      def ping
         begin
-          response = conn.get '/ping'
-          puts response.body
+          response = @conn.get '/ping'
+          response.body
         rescue Exception => e
-          puts e.message
+          e.message
         end
       end
 
