@@ -1,6 +1,7 @@
 require "thor"
 require "registry/client"
 require "registry/client/config"
+require "registry/client/connection"
 
 module Registry
   module Client
@@ -18,7 +19,7 @@ module Registry
       desc "ping", "ping to see if Registry server is reachable"
       def ping
         config = Registry::Client::Config.load(options[:configfile])
-        puts config
+        conn = Registry::Client::Connection.new(config['server'])
       end
 
     end
