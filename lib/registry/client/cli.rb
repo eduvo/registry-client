@@ -1,4 +1,5 @@
 require "thor"
+require "registry/client"
 require "registry/client/config"
 
 module Registry
@@ -11,8 +12,14 @@ module Registry
       class_option :configfile,
         aliases: "-c",
         banner: "PATH",
-        default: File.expand_path("config/registry.yml", Dir.pwd),
+        default: DEFAULT_CONFIG_FILE,
         desc: "Path to the configuration file."
+
+      desc "ping", "ping to see if Registry server is reachable"
+      def ping
+        config = Registry::Client::Config.load(options[:configfile])
+        puts config
+      end
 
     end
 

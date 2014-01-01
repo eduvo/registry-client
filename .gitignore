@@ -16,3 +16,6 @@ tmp
 .yardoc
 _yardoc
 doc/
+
+# app specific
+config/registry.yml
