@@ -2,13 +2,14 @@ require "thor"
 require "registry/client"
 require "registry/client/config"
 require "registry/client/connection"
+require "registry/client/identity"
 
 module Registry
   module Client
 
     class Cli < Thor
       include Thor::Actions
-      
+
       default_task :help
       class_option :configfile,
         aliases: "-c",
@@ -18,9 +19,22 @@ module Registry
 
       desc "ping", "ping to see if Registry server is reachable"
       def ping
-        config = Registry::Client::Config.load(options[:configfile])
-        conn = Registry::Client::Connection.new(config)
         puts conn.ping
+      end
+
+      desc "available", "checks if an email is available"
+      def available(email)
+        identity = Registry::Client::Identity.new(config, conn)
+        puts identity.available?(email)
+      end
+
+      no_commands do
+        def config
+          @_config ||= Registry::Client::Config.load(options[:configfile])
+        end
+        def conn
+          @_conn ||= Registry::Client::Connection.new(config)
+        end
       end
 
     end
