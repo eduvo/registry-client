@@ -12,7 +12,7 @@ module Registry
 
       def available?(email)
         payload = Registry::Client::Crypto.encrypt(@config['client']['secret_key'], email)
-        puts payload
+        #puts payload
         @conn.get "who", payload
       end
 

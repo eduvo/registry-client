@@ -18,12 +18,14 @@ module Registry
         get 'ping'
       end
 
-      def get(path,payload=nil)
+      def get(path,payload=nil,returnurl=nil)
         query = {
           i: @params['client']['public_key'],
-          r: "http://localhost"
+          # TODO: set domain from aplication scope
+          d: "testdomain"
         }
         query[:p] = payload if payload
+        query[:r] = returnurl if returnurl
         response = @conn.get "#{path}", query
         response.body
       rescue Exception => e
