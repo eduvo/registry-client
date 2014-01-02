@@ -1,7 +1,7 @@
 ---
-registry_server:
+server:
   host: localhost
   port: 8989
-registry_client:
+client:
   public_key: 123456789
   secret_key: qwerty
