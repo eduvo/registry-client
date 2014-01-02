@@ -19,7 +19,7 @@ module Registry
       desc "ping", "ping to see if Registry server is reachable"
       def ping
         config = Registry::Client::Config.load(options[:configfile])
-        conn = Registry::Client::Connection.new(config['server'])
+        conn = Registry::Client::Connection.new(config)
         puts conn.ping
       end
 
