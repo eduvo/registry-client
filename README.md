@@ -1,6 +1,8 @@
 # Registry::Client
 
-TODO: Write a gem description
+[![Dependency Status](https://gemnasium.com/eduvo/registry-client.png)](https://gemnasium.com/eduvo/registry-client)
+
+Work in progress. Do not use!
 
 ## Installation
 
