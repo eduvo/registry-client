@@ -22,7 +22,7 @@ module Registry
         puts conn.ping
       end
 
-      desc "available", "checks if an email is available"
+      desc "available EMAIL", "checks if an email is available"
       def available(email)
         identity = Registry::Client::Identity.new(config, conn)
         puts identity.available?(email)
