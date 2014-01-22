@@ -1,29 +1,12 @@
 # Registry::Client
 
-TODO: Write a gem description
+[![Dependency Status](https://gemnasium.com/eduvo/registry-client.png)](https://gemnasium.com/eduvo/registry-client)
 
-## Installation
+Work in progress. Do not use!
 
-Add this line to your application's Gemfile:
 
-    gem 'registry-client'
+## Copyright
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install registry-client
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+Copyright 2013 Faria Systems Ltd.
+Licensed under MIT
+Writen by mose
